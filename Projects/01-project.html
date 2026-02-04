@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height:100vh;
             display: flex;
             flex-direction: column;
@@ -13,16 +14,27 @@
             align-items: center;
         }
         #emoji-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 200px;
             width: 200px;
             border-radius: 50%;
-            background-color: azure;
+            background-color: rgb(195, 243, 243);
+            margin-bottom: 10px;
+            font-size: 100px;
+        }
+        #btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <h2>Emoji Generator</h2>
+    <h1>Emoji Generator</h1>
     <div id="emoji-container"></div>
     <button id="btn">Generate Emoji</button>
 
