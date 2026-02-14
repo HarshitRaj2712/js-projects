@@ -1,0 +1,16 @@
+<h1>🏕️ Text Adventure</h1>
+
+<p><%= sceneText %></p>
+
+<% if (Object.keys(options).length > 0) { %>
+  <form method="POST" action="/choice">
+    <% for (let option in options) { %>
+      <button name="next" value="<%= options[option] %>">
+        <%= option.toUpperCase() %>
+      </button>
+    <% } %>
+  </form>
+<% } else { %>
+  <p>Game Ended.</p>
+  <a href="/game/start">Restart</a>
+<% } %>

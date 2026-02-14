@@ -1,0 +1,59 @@
+{
+  "start": {
+    "text": "Under the moonlight, you discover a mysterious tent glowing with dark mana in the middle of the forest. The air feels heavy... as if a powerful demon once stood here.",
+    "options": {
+      "enter": "insideTent",
+      "leave": "deepForest"
+    }
+  },
+
+  "insideTent": {
+    "text": "Inside the tent, a hidden magic circle activates beneath your feet. The ground opens, revealing a forbidden dungeon filled with ancient mana crystals.",
+    "options": {
+      "enter": "dungeonGate",
+      "leave": "start"
+    }
+  },
+
+  "deepForest": {
+    "text": "You step away from the tent, but the forest grows darker. Shadows move unnaturally. You sense hostile magic beasts watching you.",
+    "options": {
+      "enter": "wolfAttack",
+      "leave": "start"
+    }
+  },
+
+  "dungeonGate": {
+    "text": "A massive black gate blocks your path. Strange symbols glow red. You feel overwhelming demonic power behind it.",
+    "options": {
+      "enter": "demonChamber",
+      "leave": "insideTent"
+    }
+  },
+
+  "demonChamber": {
+    "text": "The gate shatters! A demon infused with dark mana appears. Your grimoire suddenly glows, unlocking a hidden anti-magic ability.",
+    "options": {
+      "enter": "finalBattle",
+      "leave": "dungeonGate"
+    }
+  },
+
+  "finalBattle": {
+    "text": "With anti-magic flowing through you, you slash through the demon's spells and land the final strike. The dungeon collapses, but you survive.",
+    "options": {
+      "enter": "treasure",
+      "leave": "wolfAttack"
+    }
+  },
+
+  "treasure": {
+    "text": "✨ You obtain an ancient grimoire and become a legendary magic knight. Victory is yours!",
+    "options": {}
+  },
+
+  "wolfAttack": {
+    "text": "🐺 Magic wolves enhanced by dark mana attack you from all sides. Without enough power, you fall... Game Over.",
+    "options": {}
+  }
+}
