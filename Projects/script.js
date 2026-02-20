@@ -15,3 +15,5 @@ y.addEventListener('click', () => {
 let set = () => {
     return e[Math.floor(Math.random() * e.length)];
 };
+
+

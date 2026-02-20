@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user.username %></title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: #f2f2f2;
+            font-family: Arial;
+        }
+
+        .phone {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <h2>@<%= user.username %></h2>
+        <p><%= user.name %></p>
+
+        <% if(user.linkedin) { %>
+            <a href="<%= user.linkedin %>" target="_blank">LinkedIn</a>
+        <% } %>
+
+        <% if(user.instagram) { %>
+            <a href="<%= user.instagram %>" target="_blank">Instagram</a>
+        <% } %>
+
+        <% if(user.github) { %>
+            <a href="<%= user.github %>" target="_blank">GitHub</a>
+        <% } %>
+
+        <% if(user.youtube) { %>
+            <a href="<%= user.youtube %>" target="_blank">YouTube</a>
+        <% } %>
+
+        <a href="mailto:<%= user.email %>">Email</a>
+    </div>
+</body>
+</html>

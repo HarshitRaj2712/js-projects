@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Linktree</title>
+</head>
+<body>
+    <h1>Create Profile</h1>
+
+    <form action="/create" method="POST">
+        <input name="username" placeholder="Username" required /><br>
+        <input name="name" placeholder="Name" required /><br>
+        <input name="email" placeholder="Email" required /><br>
+        <input name="linkedin" placeholder="LinkedIn URL" /><br>
+        <input name="instagram" placeholder="Instagram URL" /><br>
+        <input name="github" placeholder="GitHub URL" /><br>
+        <input name="youtube" placeholder="YouTube URL" /><br>
+        <button type="submit">Create</button>
+    </form>
+
+    <hr>
+
+    <h1>Search Profile</h1>
+    <form action="/search" method="GET">
+        <input name="username" placeholder="Enter Username" required />
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
