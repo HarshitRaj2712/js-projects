@@ -130,19 +130,53 @@
 
     <% posts.forEach(post => { %>
       <div class="post">
+
         <h4><%= post.user.username %></h4>
+
         <img src="<%= post.imageUrl %>">
+
         <p><%= post.caption %></p>
 
-        <% if (post.user._id.toString() === currentUser) { %>
-          <form action="/edit/<%= post._id %>" method="GET" style="display:inline;">
-            <button>Edit</button>
+        <!-- ❤️ LIKE SECTION -->
+        <div style="margin-top:10px; display:flex; align-items:center; gap:10px;">
+
+          <form action="/like/<%= post._id %>" method="POST" style="display:inline;">
+            <button style="background:none;border:none;font-size:20px;cursor:pointer;">
+
+              <% 
+                const liked = post.likes.some(
+                  id => id.toString() === currentUser.toString()
+                );
+              %>
+
+              <% if (liked) { %>
+                ❤️
+              <% } else { %>
+                🤍
+              <% } %>
+
+            </button>
           </form>
 
-          <form action="/delete/<%= post._id %>" method="POST" style="display:inline;">
-            <button class="delete-btn">Delete</button>
-          </form>
+          <span style="font-size:14px; color:#555;">
+            <%= post.likes.length %> likes
+          </span>
+
+        </div>
+
+        <!-- ✏ EDIT & 🗑 DELETE -->
+        <% if (post.user._id.toString() === currentUser.toString()) { %>
+          <div style="margin-top:10px;">
+            <form action="/edit/<%= post._id %>" method="GET" style="display:inline;">
+              <button>Edit</button>
+            </form>
+
+            <form action="/delete/<%= post._id %>" method="POST" style="display:inline;">
+              <button class="delete-btn">Delete</button>
+            </form>
+          </div>
         <% } %>
+
       </div>
     <% }) %>
 

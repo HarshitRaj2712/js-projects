@@ -163,4 +163,34 @@ router.post("/logout", (req, res) => {
   res.redirect("/login");
 });
 
+router.post("/like/:id", authMiddleware, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    if (!post) return res.redirect("/feed");
+
+    const userId = req.user._id.toString();
+
+    const alreadyLiked = post.likes.includes(userId);
+
+    if (alreadyLiked) {
+      // Unlike
+      post.likes = post.likes.filter(
+        (id) => id.toString() !== userId
+      );
+    } else {
+      // Like
+      post.likes.push(userId);
+    }
+
+    await post.save();
+
+    res.redirect("/feed");
+
+  } catch (err) {
+    console.log(err);
+    res.redirect("/feed");
+  }
+});
+
 module.exports = router;
