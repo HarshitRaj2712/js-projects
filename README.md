@@ -2,7 +2,7 @@
 
 A full-stack social media web application built using **Node.js, Express, MongoDB, JWT, EJS, and Cloudinary**.
 
-Users can register, login, upload images, edit posts, delete posts, and view a paginated feed.
+Users can register, login upload images, edit posts, delete posts, and view a paginated feed.
 
 ---
 
