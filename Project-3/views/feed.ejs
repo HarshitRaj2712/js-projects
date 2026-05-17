@@ -164,7 +164,7 @@
 
         </div>
 
-        <!-- ✏ EDIT & 🗑 DELETE -->
+        
         <% if (post.user._id.toString() === currentUser.toString()) { %>
           <div style="margin-top:10px;">
             <form action="/edit/<%= post._id %>" method="GET" style="display:inline;">

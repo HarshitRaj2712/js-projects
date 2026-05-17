@@ -1,0 +1,18 @@
+body{
+background-color: #040404;
+}
+img{
+width: 100px;
+height: 100px;
+border-radius: 5px;
+margin-left: 50px;
+margin-top:50px;
+transition: 3s linear;
+}
+img:hover {
+width: 200px;
+height: 200px;
+margin-left: 400px;
+transform:rotate(360deg);
+/* box-shadow: -5px -5px 5px #888; */
+}
